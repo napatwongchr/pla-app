@@ -1,6 +1,6 @@
 # PLA — Implementation Plan (Phase 1 Prototype)
 
-> Source: `claudedocs/prd.md` | Status: Planning
+> Source: `claudedocs/prd.md` | Status: Phase 1 Complete — Phase 2 In Progress
 
 ---
 
@@ -9,19 +9,19 @@
 **Goal:** Runnable Next.js app with types, shared utilities, and in-memory store.
 
 ### Setup
-- [ ] Scaffold: `npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias "@/*"`
-- [ ] Install deps: `@tanstack/react-query`, `@anthropic-ai/sdk`, `vitest`, `@vitejs/plugin-react`, `@testing-library/react`, `@testing-library/dom`, `@testing-library/jest-dom`, `jsdom`
-- [ ] Init Shadcn: `npx shadcn@latest init` + add `button card dialog input textarea badge progress toast separator`
+- [x] Scaffold: `npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias "@/*"`
+- [x] Install deps: `@tanstack/react-query`, `@anthropic-ai/sdk`, `vitest`, `@vitejs/plugin-react`, `@testing-library/react`, `@testing-library/dom`, `@testing-library/jest-dom`, `jsdom`
+- [x] Init Shadcn: `npx shadcn@latest init` + add `button card dialog input textarea badge progress toast separator`
 
 ### Files
-- [ ] `vitest.config.ts` — jsdom environment + `@/*` alias
-- [ ] `src/test/setup.ts` — `import '@testing-library/jest-dom'`
+- [x] `vitest.config.ts` — jsdom environment + `@/*` alias
+- [x] `src/test/setup.ts` — `import '@testing-library/jest-dom'`
 - [ ] `.env.local` — `ANTHROPIC_API_KEY=...` (never commit)
-- [ ] `src/types/index.ts` — All 7 PRD interfaces + input types (`CreateTopicInput`, `UpdateTopicInput`, `CreateNoteInput`, `QuizMode`, `QuizDifficulty`, `RateLimitEntry`)
-- [ ] `src/lib/id.ts` — `generateId()` via `crypto.randomUUID()`
-- [ ] `src/lib/store.ts` — Singleton `Map<string, T>` store for all entities
-- [ ] `src/lib/seed.ts` — 2–3 sample topics + notes for dev use
-- [ ] `src/lib/api-response.ts` — `ok()`, `err()`, `notFound()`, `badRequest()` helpers
+- [x] `src/types/index.ts` — All 7 PRD interfaces + input types (`CreateTopicInput`, `UpdateTopicInput`, `CreateNoteInput`, `QuizMode`, `QuizDifficulty`, `RateLimitEntry`)
+- [x] `src/lib/id.ts` — `generateId()` via `crypto.randomUUID()`
+- [x] `src/lib/store.ts` — Singleton `Map<string, T>` store for all entities
+- [x] `src/lib/seed.ts` — 2–3 sample topics + notes for dev use
+- [x] `src/lib/api-response.ts` — `ok()`, `err()`, `notFound()`, `badRequest()` helpers
 
 ### Done when
 - [ ] `npm run dev` → app loads at `localhost:3000`
