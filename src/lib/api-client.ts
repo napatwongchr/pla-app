@@ -1,4 +1,4 @@
-import type { Topic, CreateTopicInput, UpdateTopicInput } from '@/types'
+import type { Topic, Note, StudySession, CreateTopicInput, UpdateTopicInput, CreateNoteInput } from '@/types'
 
 async function fetchJSON<T>(url: string, init?: RequestInit): Promise<T> {
   const res = await fetch(url, {
@@ -27,4 +27,36 @@ export const topicsApi = {
 
   delete: (id: string) =>
     fetchJSON<{ deleted: string }>(`/api/topics/${id}`, { method: 'DELETE' }),
+}
+
+export const notesApi = {
+  list: (topicId: string) => fetchJSON<Note[]>(`/api/topics/${topicId}/notes`),
+
+  create: (topicId: string, input: CreateNoteInput) =>
+    fetchJSON<Note>(`/api/topics/${topicId}/notes`, {
+      method: 'POST',
+      body: JSON.stringify(input),
+    }),
+
+  update: (id: string, content: string) =>
+    fetchJSON<Note>(`/api/notes/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ content }),
+    }),
+
+  delete: (id: string) =>
+    fetchJSON<{ deleted: string }>(`/api/notes/${id}`, { method: 'DELETE' }),
+}
+
+export const studySessionsApi = {
+  create: (body: {
+    topicId: string
+    durationMinutes: number
+    startedAt: string
+    endedAt: string
+  }) =>
+    fetchJSON<StudySession>('/api/study-sessions', {
+      method: 'POST',
+      body: JSON.stringify(body),
+    }),
 }

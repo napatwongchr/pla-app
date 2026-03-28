@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { Pencil, Trash2, BookOpen, Clock } from 'lucide-react'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -40,7 +41,11 @@ export default function TopicCard({ topic }: TopicCardProps) {
     <>
       <Card className="flex flex-col">
         <CardHeader className="pb-2">
-          <CardTitle className="text-base line-clamp-1">{topic.title}</CardTitle>
+          <CardTitle className="text-base line-clamp-1">
+            <Link href={`/topics/${topic.id}`} className="hover:underline">
+              {topic.title}
+            </Link>
+          </CardTitle>
           {topic.description && (
             <p className="text-sm text-muted-foreground line-clamp-2">{topic.description}</p>
           )}

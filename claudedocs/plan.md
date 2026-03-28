@@ -66,25 +66,25 @@
 **Goal:** Notes CRUD per topic; study timer that persists across page refresh.
 
 ### API Routes
-- [ ] `GET /api/topics/[id]/notes` — notes for topic
-- [ ] `POST /api/topics/[id]/notes` — create note, update `topic.noteCount`
-- [ ] `PUT /api/notes/[id]` — update content + `wordCount`
-- [ ] `DELETE /api/notes/[id]` — remove note, decrement `topic.noteCount`
-- [ ] `POST /api/study-sessions` — record session, recalculate `topic.totalStudyMinutes`
+- [x] `GET /api/topics/[id]/notes` — notes for topic
+- [x] `POST /api/topics/[id]/notes` — create note, update `topic.noteCount`
+- [x] `PUT /api/notes/[id]` — update content + `wordCount`
+- [x] `DELETE /api/notes/[id]` — remove note, decrement `topic.noteCount`
+- [x] `POST /api/study-sessions` — record session, recalculate `topic.totalStudyMinutes`
 
 ### Files
-- [ ] `src/lib/word-count.ts` — `countWords(text): number`
-- [ ] `src/lib/study-time.ts` — `getTotalStudyMinutes()`, `getWeeklyStudyMinutes()`
-- [ ] `src/app/api/topics/[id]/notes/route.ts`
-- [ ] `src/app/api/notes/[id]/route.ts`
-- [ ] `src/app/api/study-sessions/route.ts`
-- [ ] `src/components/notes/NoteEditor.tsx` — textarea + auto-save + word count
-- [ ] `src/components/notes/NoteList.tsx`
-- [ ] `src/components/timer/StudyTimer.tsx` — Start/Stop button + elapsed display
-- [ ] `src/components/timer/TimerDisplay.tsx` — `HH:MM:SS` formatter
-- [ ] `src/hooks/useNotes.ts` — 30s debounce auto-save
-- [ ] `src/hooks/useStudyTimer.ts` — `localStorage` persistence
-- [ ] `src/app/topics/[id]/page.tsx` — topic detail with notes + timer
+- [x] `src/lib/word-count.ts` — `countWords(text): number`
+- [x] `src/lib/study-time.ts` — `getTotalStudyMinutes()`, `getWeeklyStudyMinutes()`
+- [x] `src/app/api/topics/[id]/notes/route.ts`
+- [x] `src/app/api/notes/[id]/route.ts`
+- [x] `src/app/api/study-sessions/route.ts`
+- [x] `src/components/notes/NoteEditor.tsx` — textarea + auto-save + word count
+- [x] `src/components/notes/NoteList.tsx`
+- [x] `src/components/timer/StudyTimer.tsx` — Start/Stop button + elapsed display
+- [x] `src/components/timer/TimerDisplay.tsx` — `HH:MM:SS` formatter
+- [x] `src/hooks/useNotes.ts` — 30s debounce auto-save
+- [x] `src/hooks/useStudyTimer.ts` — `localStorage` persistence
+- [x] `src/app/topics/[id]/page.tsx` — topic detail with notes + timer
 
 ### Timer localStorage Shape
 ```json
@@ -92,10 +92,10 @@
 ```
 
 ### Done when
-- [ ] Add note → auto-saves after 30s inactivity; shows "Saving..." → "Saved ✓"
-- [ ] Word count updates on every keystroke
-- [ ] Start timer → refresh page → timer resumes from correct elapsed time
-- [ ] Stop timer → `totalStudyMinutes` updates on topic list
+- [x] Add note → auto-saves after 30s inactivity; shows "Saving..." → "Saved ✓"
+- [x] Word count updates on every keystroke
+- [x] Start timer → refresh page → timer resumes from correct elapsed time
+- [x] Stop timer → `totalStudyMinutes` updates on topic list
 
 ---
 
