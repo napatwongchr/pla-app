@@ -9,8 +9,8 @@
 **Goal:** Runnable Next.js app with types, shared utilities, and in-memory store.
 
 ### Setup
-- [ ] Scaffold: `npx create-next-app@14 . --typescript --tailwind --eslint --app --src-dir --import-alias "@/*"`
-- [ ] Install deps: `@tanstack/react-query`, `@anthropic-ai/sdk`, `vitest`, `@vitejs/plugin-react`, `@testing-library/react`, `@testing-library/jest-dom`, `jsdom`
+- [ ] Scaffold: `npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias "@/*"`
+- [ ] Install deps: `@tanstack/react-query`, `@anthropic-ai/sdk`, `vitest`, `@vitejs/plugin-react`, `@testing-library/react`, `@testing-library/dom`, `@testing-library/jest-dom`, `jsdom`
 - [ ] Init Shadcn: `npx shadcn@latest init` + add `button card dialog input textarea badge progress toast separator`
 
 ### Files
