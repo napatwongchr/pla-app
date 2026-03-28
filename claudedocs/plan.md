@@ -1,6 +1,6 @@
 # PLA — Implementation Plan (Phase 1 Prototype)
 
-> Source: `claudedocs/prd.md` | Status: Phase 1 Complete — Phase 2 In Progress
+> Source: `claudedocs/prd.md` | Status: Phase 2 Complete — Phase 3 In Progress
 
 ---
 
@@ -34,29 +34,30 @@
 **Goal:** Full CRUD for topics via API routes + UI.
 
 ### API Routes
-- [ ] `GET /api/topics` — list all, sorted by `updatedAt` desc
-- [ ] `POST /api/topics` — create topic + default `ReviewSchedule`
-- [ ] `PUT /api/topics/[id]` — update title/description
-- [ ] `DELETE /api/topics/[id]` — remove topic + cascade-delete its notes
+- [x] `GET /api/topics` — list all, sorted by `updatedAt` desc
+- [x] `POST /api/topics` — create topic + default `ReviewSchedule`
+- [x] `PUT /api/topics/[id]` — update title/description
+- [x] `DELETE /api/topics/[id]` — remove topic + cascade-delete its notes
 
 ### Files
-- [ ] `src/app/api/topics/route.ts`
-- [ ] `src/app/api/topics/[id]/route.ts`
-- [ ] `src/lib/query-client.ts` — TanStack `QueryClient` singleton
-- [ ] `src/lib/api-client.ts` — typed fetch wrappers (`topicsApi`)
-- [ ] `src/app/layout.tsx` — `QueryClientProvider` + `Toaster`
-- [ ] `src/app/page.tsx` — redirect to `/topics`
-- [ ] `src/app/topics/page.tsx` — topic list page
-- [ ] `src/components/topics/TopicCard.tsx`
-- [ ] `src/components/topics/TopicForm.tsx`
-- [ ] `src/components/topics/TopicList.tsx`
-- [ ] `src/hooks/useTopics.ts` — `useQuery` + mutations with cache invalidation
+- [x] `src/app/api/topics/route.ts`
+- [x] `src/app/api/topics/[id]/route.ts`
+- [x] `src/lib/query-client.ts` — TanStack `QueryClient` singleton
+- [x] `src/lib/api-client.ts` — typed fetch wrappers (`topicsApi`)
+- [x] `src/app/layout.tsx` — `QueryClientProvider` + `Toaster`
+- [x] `src/app/page.tsx` — redirect to `/topics`
+- [x] `src/app/topics/page.tsx` — topic list page
+- [x] `src/components/topics/TopicCard.tsx`
+- [x] `src/components/topics/TopicForm.tsx`
+- [x] `src/components/topics/TopicList.tsx`
+- [x] `src/hooks/useTopics.ts` — `useQuery` + mutations with cache invalidation
+- [x] `src/components/providers.tsx` — `QueryClientProvider` + `Toaster` wrapper
 
 ### Done when
-- [ ] Create topic → appears in list
-- [ ] Edit topic → updates in place
-- [ ] Delete topic → removed (notes also gone)
-- [ ] List sorted by `updatedAt` descending
+- [x] Create topic → appears in list
+- [x] Edit topic → updates in place
+- [x] Delete topic → removed (notes also gone)
+- [x] List sorted by `updatedAt` descending
 
 ---
 
