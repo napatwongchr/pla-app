@@ -1,6 +1,6 @@
 # PLA — Implementation Plan (Phase 1 Prototype)
 
-> Source: `claudedocs/prd.md` | Status: Phase 2 Complete — Phase 3 In Progress
+> Source: `claudedocs/prd.md` | Status: Phase 4 Complete — Phase 5 Next
 
 ---
 
@@ -104,28 +104,28 @@
 **Goal:** Rule-based quiz generation from notes; SM-2 spaced repetition after each attempt.
 
 ### API Routes
-- [ ] `GET /api/quiz/generate` — generate rule-based quiz (`?topicId=`)
-- [ ] `POST /api/quiz/[id]/submit` — score answers + update `ReviewSchedule` via SM-2
-- [ ] `GET /api/quiz/attempts` — attempt history (optional `?topicId=`)
-- [ ] `GET /api/review/queue` — topics where `nextReviewAt <= now`, most overdue first
+- [x] `GET /api/quiz/generate` — generate rule-based quiz (`?topicId=`)
+- [x] `POST /api/quiz/[id]/submit` — score answers + update `ReviewSchedule` via SM-2
+- [x] `GET /api/quiz/attempts` — attempt history (optional `?topicId=`)
+- [x] `GET /api/review/queue` — topics where `nextReviewAt <= now`, most overdue first
 
 ### Files
-- [ ] `src/lib/quiz-generator.ts` — `generateRuleBasedQuiz(notes, quizId)`, `InsufficientContentError`
-- [ ] `src/lib/sm2.ts` — `calculateNextReview(input): SM2Output`
-- [ ] `src/lib/score.ts` — `calculateScore(answers, questions): number`
-- [ ] `src/app/api/quiz/generate/route.ts`
-- [ ] `src/app/api/quiz/[id]/submit/route.ts`
-- [ ] `src/app/api/quiz/attempts/route.ts`
-- [ ] `src/app/api/review/queue/route.ts`
-- [ ] `src/components/quiz/QuizGenerator.tsx`
-- [ ] `src/components/quiz/QuizQuestion.tsx`
-- [ ] `src/components/quiz/QuizResults.tsx`
-- [ ] `src/components/quiz/QuizHistory.tsx`
-- [ ] `src/components/review/ReviewQueue.tsx`
-- [ ] `src/components/review/ReviewScheduleCard.tsx`
-- [ ] `src/hooks/useQuiz.ts`
-- [ ] `src/hooks/useReviewQueue.ts`
-- [ ] `src/app/review/page.tsx`
+- [x] `src/lib/quiz-generator.ts` — `generateRuleBasedQuiz(notes, quizId)`, `InsufficientContentError`
+- [x] `src/lib/sm2.ts` — `calculateNextReview(input): SM2Output`
+- [x] `src/lib/score.ts` — `calculateScore(answers, questions): number`
+- [x] `src/app/api/quiz/generate/route.ts`
+- [x] `src/app/api/quiz/[id]/submit/route.ts`
+- [x] `src/app/api/quiz/attempts/route.ts`
+- [x] `src/app/api/review/queue/route.ts`
+- [x] `src/components/quiz/QuizGenerator.tsx`
+- [x] `src/components/quiz/QuizQuestion.tsx`
+- [x] `src/components/quiz/QuizResults.tsx`
+- [x] `src/components/quiz/QuizHistory.tsx`
+- [x] `src/components/review/ReviewQueue.tsx`
+- [x] `src/components/review/ReviewScheduleCard.tsx`
+- [x] `src/hooks/useQuiz.ts`
+- [x] `src/hooks/useReviewQueue.ts`
+- [x] `src/app/review/page.tsx`
 
 ### SM-2 Score Mapping
 | Score | Grade (q) | Effect |
@@ -140,10 +140,10 @@
 `easeFactor = max(1.3, ef + 0.1 - (5-q) × (0.08 + (5-q) × 0.02))`
 
 ### Done when
-- [ ] 3+ notes with 50+ words → quiz with 5 questions, 4 options each
-- [ ] Score 100 → `nextReviewAt` far in future
-- [ ] Score 0 → `nextReviewAt` = tomorrow, interval reset
-- [ ] Review queue shows overdue topics after low score
+- [x] 3+ notes with 50+ words → quiz with 5 questions, 4 options each
+- [x] Score 100 → `nextReviewAt` far in future
+- [x] Score 0 → `nextReviewAt` = tomorrow, interval reset
+- [x] Review queue shows overdue topics after low score
 
 ---
 

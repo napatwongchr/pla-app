@@ -1,6 +1,8 @@
 import { Suspense } from 'react'
 import NoteList from '@/components/notes/NoteList'
 import StudyTimer from '@/components/timer/StudyTimer'
+import QuizGenerator from '@/components/quiz/QuizGenerator'
+import QuizHistory from '@/components/quiz/QuizHistory'
 import { Separator } from '@/components/ui/separator'
 
 export const metadata = { title: 'Topic — PLA' }
@@ -17,6 +19,9 @@ export default async function TopicDetailPage({ params }: Props) {
       <Suspense fallback={<p className="text-muted-foreground">Loading…</p>}>
         <NoteList topicId={id} />
       </Suspense>
+      <Separator />
+      <QuizGenerator topicId={id} />
+      <QuizHistory topicId={id} />
     </main>
   )
 }

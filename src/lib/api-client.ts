@@ -1,4 +1,4 @@
-import type { Topic, Note, StudySession, CreateTopicInput, UpdateTopicInput, CreateNoteInput } from '@/types'
+import type { Topic, Note, StudySession, Quiz, QuizAttempt, ReviewSchedule, CreateTopicInput, UpdateTopicInput, CreateNoteInput } from '@/types'
 
 async function fetchJSON<T>(url: string, init?: RequestInit): Promise<T> {
   const res = await fetch(url, {
@@ -59,4 +59,24 @@ export const studySessionsApi = {
       method: 'POST',
       body: JSON.stringify(body),
     }),
+}
+
+export const quizApi = {
+  generate: (topicId: string) =>
+    fetchJSON<Quiz>(`/api/quiz/generate?topicId=${topicId}`),
+
+  submit: (quizId: string, answers: number[]) =>
+    fetchJSON<QuizAttempt>(`/api/quiz/${quizId}/submit`, {
+      method: 'POST',
+      body: JSON.stringify({ answers }),
+    }),
+
+  attempts: (topicId?: string) =>
+    fetchJSON<QuizAttempt[]>(
+      topicId ? `/api/quiz/attempts?topicId=${topicId}` : '/api/quiz/attempts'
+    ),
+}
+
+export const reviewApi = {
+  queue: () => fetchJSON<ReviewSchedule[]>('/api/review/queue'),
 }
