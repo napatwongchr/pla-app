@@ -25,6 +25,7 @@ export default function TopicForm({ initial, onSubmit, onCancel, isPending }: To
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-3">
       <Input
+        data-testid="topic-title-input"
         placeholder="Topic title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}

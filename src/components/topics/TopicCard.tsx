@@ -39,7 +39,7 @@ export default function TopicCard({ topic }: TopicCardProps) {
 
   return (
     <>
-      <Card className="flex flex-col">
+      <Card data-testid="topic-card" className="flex flex-col">
         <CardHeader className="pb-2">
           <CardTitle className="text-base line-clamp-1">
             <Link href={`/topics/${topic.id}`} className="hover:underline">
